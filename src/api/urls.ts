@@ -1,0 +1,1 @@
+export const API_BANK_URL = "https://api.nbrb.by/exrates/currencies/"
