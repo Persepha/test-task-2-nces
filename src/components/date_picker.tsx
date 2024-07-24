@@ -37,6 +37,10 @@ export const DatePicker: React.FC<DatePickerProps> = ({ setDate, date }) => {
       <PopoverContent className="w-auto p-0">
         <Calendar
           mode="single"
+          captionLayout="dropdown-buttons" //Also: dropdown | buttons
+          fromYear={1991}
+          toYear={2050}
+          hideNavigation
           selected={date}
           onSelect={setDate}
           locale={ru}

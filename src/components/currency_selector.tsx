@@ -42,7 +42,8 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
         >
           {value
             ? currensies.find(
-                (currency) => currency.Cur_ID.toString() === value
+                (currency) =>
+                  `${currency.Cur_ID.toString()}${currency.Cur_Name}` === value
               )?.Cur_Name
             : "Выберите валюту..."}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -58,13 +59,14 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
                 {currensies.map((currency) => (
                   <CommandItem
                     key={currency.Cur_ID}
-                    value={currency.Cur_ID.toString()}
+                    value={currency.Cur_ID.toString() + currency.Cur_Name}
                     onSelect={(currentValue) => {
                       setValue(currentValue === value ? "" : currentValue);
                       setSelectedCurrency(
                         currensies.find(
                           (currency) =>
-                            currency.Cur_ID.toString() === currentValue
+                            `${currency.Cur_ID.toString()}${currency.Cur_Name}` ===
+                            currentValue
                         ) || null
                       );
 
@@ -79,7 +81,7 @@ export const CurrencySelector: React.FC<CurrencySelectorProps> = ({
                           : "opacity-0"
                       )}
                     />
-                    {`${currency.Cur_Name} - id: ${currency.Cur_ID}`}
+                    {`${currency.Cur_ID}: ${currency.Cur_Name} с ${currency.Cur_DateStart.slice(0, 4)} по ${currency.Cur_DateEnd.slice(0, 4)} `}
                   </CommandItem>
                 ))}
               </CommandGroup>

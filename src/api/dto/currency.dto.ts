@@ -14,6 +14,6 @@ export interface CurrencyDTO {
     Cur_Name_EngMulti: string;
     Cur_Scale: number;
     Cur_Periodicity: number;
-    Cur_DateStart: Date;
-    Cur_DateEnd: Date;
+    Cur_DateStart: string;
+    Cur_DateEnd: string;
 }
