@@ -57,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <main className="grid place-content-center py-16 gap-4">
+    <main className="grid py-16 gap-4">
       <Card className="mx-auto">
         <CardHeader>
           <CardTitle>Официальный курс валюты</CardTitle>
@@ -67,7 +67,7 @@ function App() {
           <div className="flex flex-col gap-2 justify-center items-baseline md:flex-row">
             <span>Валюта: </span>
             <CurrencySelector
-              currensies={offl}
+              currensies={currensies}
               setSelectedCurrency={setSelectedCurrency}
             />
           </div>

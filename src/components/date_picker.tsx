@@ -31,7 +31,11 @@ export const DatePicker: React.FC<DatePickerProps> = ({ setDate, date }) => {
           )}
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
-          {date ? format(date, "PPP") : <span>Выберите дату</span>}
+          {date ? (
+            format(date, "PPP", { locale: ru })
+          ) : (
+            <span>Выберите дату</span>
+          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">

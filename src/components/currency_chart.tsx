@@ -44,12 +44,15 @@ export const CurrencyChart: React.FC<CurrencyChartProps> = ({
   startDate,
 }) => {
   return (
-    <Card className="w-[90vw]">
+    <Card className="mx-2">
       <CardHeader>
         <CardTitle>Динамика курса валюты</CardTitle>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer
+          config={chartConfig}
+          className="aspect-auto h-[250px] w-full"
+        >
           <LineChart
             accessibilityLayer
             data={chartData}
